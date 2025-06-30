@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div id="app">
+      <aside id="sidebar">
+        <div id="sidebar-header">
+          <span class="sidebar-logo">Trello</span>
+        </div>
+        <nav id="sidebar-menu">
+          <ul>
+            <li>
+              <a href="#" id="dashboard-link"
+                ><i class="fa-solid fa-list-ul"></i> User dashboard</a>
+            </li>
+            <li>
+              <a href="#" id="add-user-link"
+                ><i class="fa-solid fa-star"></i>Add new user</a>
+            </li>
+            <li>
+              <a href="#" id="signout-link"
+                ><i class="fa-solid fa-right-from-bracket"></i>Sign out</a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      <main id="main-content">
+        <header id="main-header">
+          <h1 id="page-title">
+            <span id="list-icon"><i class="fa-solid fa-list-ul"></i></span>
+            User Management
+          </h1>
+          <div id="search-container">
+            <input
+              type="text"
+              id="search-input"
+              placeholder="Search user by name"/>
+            <button id="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+          </div>
+        </header>
+        <section id="table-section">
+          <table id="user-table">
+            <thead>
+              <tr>
+                <th>User Code</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Birthday</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="userTableBody"></tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+    <script src="./js/index.js"></script>
+  </body>
+</html>

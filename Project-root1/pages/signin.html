@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Trello</title>
+    <link rel="stylesheet" href="../css/signin.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="logo">Trello</h1>
+      <p class="subtitle">Please sign in</p>
+      <form class="login-form" id="main-form">
+        <input id="email" type="email" placeholder="Email address" />
+        <span id="emailError" class="error"></span>
+        <input id="password" type="password" placeholder="Password" />
+        <span id="passwordError" class="error"></span>
+        <div class="remember">
+          <input type="checkbox" id="remember" />
+          <label for="remember">Remember me</label>
+        </div>
+        <p class="signup-text">
+          Don't have an account,
+          <a href="http://127.0.0.1:5500/pages/signup.html">Click here !</a>
+        </p>
+        <button type="submit">Sign in</button>
+      </form>
+      <div id="hug-alert" class="hug-alert"></div>
+      <footer>© 2025 - Rikkei Education</footer>
+    </div>
+    <script src="../js/signin.js"></script>
+  </body>
+</html>

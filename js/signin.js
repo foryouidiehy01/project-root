@@ -42,7 +42,7 @@ form.addEventListener("submit", function (e) {
   localStorage.setItem("currentUser", JSON.stringify(user));
   showHug("🎉 Đăng nhập thành công!");
   setTimeout(() => {
-    window.location.href = "http://127.0.0.1:5500/user.html";
+    window.location.href = "./user.html";
   }, 1500);
 });
 

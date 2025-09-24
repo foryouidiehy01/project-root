@@ -63,7 +63,7 @@ form.addEventListener("submit", function (e) {
     localStorage.setItem("users", JSON.stringify(users));
 
     alert("🎉 Đăng ký thành công!");
-    window.location.href = "http://127.0.0.1:5500/pages/signin.html";
+    window.location.href = "../index.html";
 });
 
 function generateUniqueBirthday(existingDates) {

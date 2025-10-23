@@ -24,25 +24,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let errors = [];
 
-        if (!fullname) errors.push("Họ và tên không được để trống");
+        if (!fullname) errors.push("Please enter your full name.");
         if (!username) {
-            errors.push("Username không được để trống");
+            errors.push("Please enter your username.");
         } else if (users.some(u => u.username === username)) {
-            errors.push("Username đã tồn tại");
+            errors.push("Username already exists.");
         }
 
         if (!email) {
-            errors.push("Email không được để trống");
+            errors.push("Please enter your email.");
         } else if (!/^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/.test(email)) {
-            errors.push("Email không đúng định dạng");
+            errors.push("Please enter your email.");
         } else if (users.some(u => u.email === email)) {
-            errors.push("Email đã tồn tại");
+            errors.push("Email already exists.");
         }
 
         if (!password) {
-            errors.push("Mật khẩu không được để trống");
+            errors.push("Please enter your password.");
         } else if (password.length < 8) {
-            errors.push("Mật khẩu phải từ 8 ký tự trở lên");
+            errors.push("Password must be at least 8 characters.");
         }
 
         if (errors.length > 0) {
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
         users.push(newUser);
         localStorage.setItem("users", JSON.stringify(users));
 
-        alert("Thêm người dùng thành công!");
+        alert("User created successfully!");
         window.location.href = "user.html";
     });
 });

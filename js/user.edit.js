@@ -51,20 +51,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const errors = [];
 
-    if (!username) errors.push("Username không được để trống");
-    if (!email) errors.push("Email không được để trống");
+    if (!username) errors.push("Please enter your username.");
+    if (!email) errors.push("Please enter your email.");
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
     if (email && !emailRegex.test(email)) {
-      errors.push("Email không đúng định dạng");
+      errors.push("Please enter your email.");
     }
-    if (!password) errors.push("Mật khẩu không được để trống");
-    else if (password.length < 8) errors.push("Mật khẩu phải từ 8 ký tự trở lên");
+    if (!password) errors.push("Please enter your password.");
+    else if (password.length < 8) errors.push("Password must be at least 8 characters.");
 
     const isDuplicateUsername = users.some(u => u.username === username && u.id !== userId);
-    if (isDuplicateUsername) errors.push("Username đã tồn tại!");
+    if (isDuplicateUsername) errors.push("Username already exists!");
 
     const isDuplicateEmail = users.some(u => u.email === email && u.id !== userId);
-    if (isDuplicateEmail) errors.push("Email đã tồn tại!");
+    if (isDuplicateEmail) errors.push("Email already exists!");
 
     if (errors.length > 0) {
       alert(errors.join("\n"));
@@ -83,7 +83,8 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     localStorage.setItem("users", JSON.stringify(users));
-    alert("✅ Cập nhật người dùng thành công!");
+    alert("✅ User updated successfully!");
     window.location.href = "user.html";
   });
 });
+

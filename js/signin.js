@@ -16,12 +16,12 @@ form.addEventListener("submit", function (e) {
   let isValid = true;
 
   if (email === "") {
-    emailError.textContent = "Email không được để trống";
+    emailError.textContent = "Please enter your email.";
     isValid = false;
   }
 
   if (password === "") {
-    passwordError.textContent = "Mật khẩu không được để trống";
+    passwordError.textContent = "Please enter your password.";
     isValid = false;
   }
 
@@ -30,17 +30,17 @@ form.addEventListener("submit", function (e) {
   const user = users.find(u => u.email === email);
 
   if (!user) {
-    emailError.textContent = "Email không tồn tại";
+    emailError.textContent = "Email not found.";
     return;
   }
 
   if (user.password !== password) {
-    passwordError.textContent = "Mật khẩu không đúng";
+    passwordError.textContent = "Incorrect password.";
     return;
   }
 
   localStorage.setItem("currentUser", JSON.stringify(user));
-  showHug("🎉 Đăng nhập thành công!");
+  showHug("🎉 Login successful!");
   setTimeout(() => {
     window.location.href = "./user.html";
   }, 1500);
@@ -53,3 +53,4 @@ function showHug(message, color = "#28a745") {
   hug.classList.add("show");
   setTimeout(() => hug.classList.remove("show"), 3000);
 }
+

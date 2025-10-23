@@ -68,7 +68,7 @@ function renderUsersTable() {
 }
 
 function deleteUser(userId) {
-  const confirmDelete = confirm("Bạn có chắc chắn muốn xoá người dùng này?");
+  const confirmDelete = confirm("Are you sure you want to delete this user?");
   if (!confirmDelete) return;
 
   let userIndex = usersFromLocal.findIndex(user => user.id === userId);
@@ -84,3 +84,4 @@ function editUser(userId) {
 }
 
 renderUsersTable();
+

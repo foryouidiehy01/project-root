@@ -18,26 +18,26 @@ form.addEventListener("submit", function (e) {
 
     let isValid = true;
     if (email === "") {
-        emailError.innerText = "Email không được để trống";
+        emailError.innerText = "Please enter your email.";
         isValid = false;
     } else if (!/^\S+@\S+\.\S+$/.test(email)) {
-        emailError.innerText = "Email phải đúng định dạng (vd: example@gmail.com)";
+        emailError.innerText = "Please enter a valid email address (eg: example@gmail.com)";
         isValid = false;
     }
 
     if (username === "") {
-        usernameError.innerText = "Tài khoản không được để trống";
+        usernameError.innerText = "Please enter your username.";
         isValid = false;
     } else if (users.some(u => u.username === username)) {
-        usernameError.innerText = "Tài khoản đã tồn tại";
+        usernameError.innerText = "Username already taken.";
         isValid = false;
     }
 
     if (password === "") {
-        passwordError.innerText = "Mật khẩu không được để trống";
+        passwordError.innerText = "Please enter your password.";
         isValid = false;
     } else if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/.test(password)) {
-        passwordError.innerText = "Mật khẩu phải tối thiểu 8 ký tự, có chữ thường, chữ hoa và số";
+        passwordError.innerText = "Password must be 8+ chars, with lowercase, uppercase & numbers.";
         isValid = false;
     }
 
@@ -62,7 +62,7 @@ form.addEventListener("submit", function (e) {
     users.push(newUser);
     localStorage.setItem("users", JSON.stringify(users));
 
-    alert("🎉 Đăng ký thành công!");
+    alert("🎉 Sign up successful!");
     window.location.href = "../index.html";
 });
 
@@ -80,3 +80,4 @@ function generateUniqueBirthday(existingDates) {
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
